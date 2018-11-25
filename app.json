@@ -1,0 +1,18 @@
+{
+  "success_url": "/",
+  "env": {
+    "APP_ENV": "prod",
+    "APP_SECRET": {"generator": "secret"}
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-php"
+    }
+  ],
+  "scripts": {
+     "compile": [
+         "php bin/console doctrine:migrations:migrate"
+     ]
+  }
+}
+

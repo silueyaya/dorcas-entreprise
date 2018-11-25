@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block meta %}
+            <!-- meta -->
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="description" content="">
+            <meta name="keywords" content="">
+            <meta name="robots" content="index,follow">
+        {% endblock %}
+
+        <title>{% block title %}Achat-Bitcoin{% endblock %}</title>
+
+        {% block stylesheets %}
+            <link href="{{ asset('assets/css/font-awesome.min.css')}}" rel="stylesheet">
+            <link href="{{ asset('assets/css/animate.css')}}" rel="stylesheet">
+            <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
+            <link href="{{ asset('assets/css/bwt.css')}}" rel="stylesheet">
+            <link href="{{ asset('assets/css/full-slider.css')}}" rel="stylesheet">
+
+            <link href="{{ asset('assets/css/animate.css')}}" rel="stylesheet">
+            <link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
+            <!-- Custom Fonts -->
+
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet">    
+
+                <!--[if lt IE 9]>
+                    <script src="javascript/html5shiv.js"></script>
+                    <script src="javascript/respond.min.js"></script>
+                <![endif]-->
+        {% endblock %}
+    </head>
+
+    <body class="header-sticky">
+        <div class="boxed">
+                <div class="loader">
+                    <span class="loader1 block-loader"></span>
+                    <span class="loader2 block-loader"></span>
+                    <span class="loader3 block-loader"></span>
+                </div>
+            
+                <div class="header-inner-pages">
+                    <div style="background:#617588 !important">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul class="bwt-information">
+                                        <li class="phone">
+                                            <a href="#" title="Numero Phone"><i class="fa fa-phone"></i> Tel : XX XX XX XX</a>
+                                        </li>
+                                        <li class="email">
+                                            <a href="#" title="Email"><i class="fa fa-envelope"></i> Email: xxx@gmail.com</a>
+                                        </li>
+                                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                            <li class="email">
+                                                <a href="" title="{{ app.user|capitalize }}"><i class="fa fa-user"></i> {{ app.user|capitalize }}</a>
+                                            </li>
+                                            <li class="email">
+                                                <a href="{{ path('fos_user_profile_show') }}" title="profile"><i class="fa fa-"></i>  Mon profile</a>
+                                            </li>
+                                            <li class="email">
+                                                <a href="{{ path('fos_user_security_logout') }}" title="Deconnexion"><i class="fa fa-logout"></i> Deconnexion </a>
+                                            </li>
+                                        {% else %}
+                                        <li class="email">
+                                            <a href="{{ path('fos_user_security_login') }}" title="Se connecter"><i class="fa fa-log"></i> Se connecter </a>
+                                        </li>
+                                        <li class="email">
+                                            <a href="{{ path('fos_user_registration_register') }}" title="Inscription"><i class="fa fa-"></i> Inscription </a>
+                                        </li>
+                                    {% endif %}
+                                    </ul>
+                                </div><!-- col-md-12 -->
+                            </div><!-- row -->
+                        </div><!-- container -->
+                    </div><!-- Top -->    
+                </div><!-- header-inner-pages -->
+
+                <!-- Wrap-slide -->
+                <div class="wrap-slider">
+                    <!-- Header -->            
+                    <header id="header" class="header style-color clearfix">
+                        <div class="container">
+                            <div class="header-wrap clearfix">
+                                <div id="logo" class="logo">
+                                    <a href="{{path('index_base')}}" rel="home">
+                                        <img style="height:50px;weight:50px" src="{{asset('assets/images/bitimgs/images.jpg')}}" class="img-fluid" alt="Logo">
+                                    </a>
+                                </div><!-- /.logo -->
+
+                                <div class="nav-wrap">
+                                    <div class="btn-menu">
+                                        <span></span>
+                                    </div><!-- //mobile menu button -->
+
+                                    <nav id="mainnav" class="mainnav">
+                                        <ul class="menu"> 
+                                            <li>
+                                               <a href="{{ path('buy_bitcoins') }}" class="active" title="Acheter des bitcoins"><i class="fa fa-"></i> Acheter des bitcoins</a>
+                                            </li>
+                                           {# <li><a target="_blank" href="https://digycode.com/">Digycode</a></li> 
+                                            <li><a target="_blank" href="https://zebitex.com/">Trade Cryptos</a>
+                                            </li>     
+                                            <li><a target="_blank" href="https://digywallet.com/">Wallet</a>
+                                            </li>#}                                              
+                                        </ul><!-- /.menu -->
+                                    </nav><!-- /.mainnav -->
+                                </div><!-- /.nav-wrap -->
+                            </div><!-- /.header-wrap --> 
+                        </div>
+                    </header><!-- /.header -->
+                </div> <!-- /.wrap-slider -->
+
+                <section>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                        <!-- Slide One - Set the background image for this slide in the line below                         <img src="{{ asset('assets/images/bitimgs/slide1.jpg')}}">
+-->
+                        <div class="carousel-item active" style="background-image: url('{{ asset('assets/images/bitimgs/slide1.jpg')}}')" >
+                            <div class="carousel-caption d-md-block">
+                            <h3>Commandez votre bitcoin</h3>
+                            <p>Chez nous,les reservations en premiere position.</p>
+                            <a href="#" class="btn">Voir Plus+</a>
+                            </div>
+                        </div>
+                        <!-- Slide Two - Set the background image for this slide in the line below                         <img src="{{ asset('assets/images/bitimgs/slide3.jpg')}}">
+-->
+                        <div class="carousel-item" style="background-image: url('{{ asset('assets/images/bitimgs/slide3.jpg')}}') ">
+                            <div class="carousel-caption d-md-block">
+                            <h3>Commandez votre bitcoin</h3>
+                            <p>Chez nous,les reservations en premiere position.</p>
+                            <a href="#" class="btn">Voir Plus+</a>
+                            </div>
+                        </div>
+                        <!-- Slide Three - Set the background image for this slide in the line below <img src="{{ asset('assets/images/bitimgs/slide4.png')}}">-->
+                        <div class="carousel-item" style="background-image: url('{{ asset('assets/images/bitimgs/slide4.png')}}') ">
+    
+                            <div class="carousel-caption d-md-block">
+                            <h3>Commandez votre bitcoin</h3>
+                            <p>Chez nous,les reservations en premiere position.</p>
+                            <a href="#" class="btn">Voir Plus+</a>
+                            </div>
+                        </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+            {% block body %}
+                    <section class="flat-row contact-page bwt-top-20">
+                        <div class="container">
+                            
+                                <div class="row">
+                                    <div class="col-md-5 col-lg-5">
+                                            <div >
+                                                <h3 class="title">Verification d'un bitcoin</h3>
+                                            </div>
+
+                                            <form action="{{ path('check_wallet')}}" method="GET" id="contactform" class="comment-form">
+                                                <div class="field clearfix">      
+                                                    <div class="wrap-type-input">
+                                                            <br><br>                    
+                                                        <div class="input-wrap name">
+                                                            <input type="text" style="color:black !important" placeholder="Addresse Bitcoin" name="addr" class="tb-my-input"  id="author-footer" tabindex="1"  size="32" aria-required="true" />
+                                                            <button type="submit"  class="bwt-button bg-orange">Valider</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                    </div>
+
+                                    <div class="col-md-3 col-lg-3">
+                                        {% if test %}
+                                            <div >
+                                                <h3 class="title">Information</h3>
+                                            </div>
+                                            <br>
+                                            <p style="color:red">Addresse Valide</p>
+                                            <p>balanceSat : {{test.balanceSat}}</p>
+                                        {% else %}
+                                            <span style="text-align:center;color:white"></span>
+                                        {% endif %}
+                                    </div>
+
+
+                                    <div class="col-md-4 col-lg-4">
+                                            <div >
+                                                <h3 class="title">Acheter un Bitcoin</h3>
+                                            </div>
+                                            <form id="contactform"  method="post" action="#">
+                                                <div class="field clearfix">      
+                                                    <div class="wrap-type-input">
+                                                            <br><br>                    
+                                                        <div class="input-wrap name">
+                                                        <a style="width:65%; background-color:rgb(247, 69, 83) !important;color:white !important" class='payssion-button pay_now_large button bwt-button' data-key='live_81f0fd0e99ca5a26'><i class='fa fa-shopping-cart'></i>&nbsp;J'achete mon Bitcoin</a><script src='https://www.payssion.com/static/checkout/button.js' type='text/javascript'></script> 
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </form><!-- /.comment-form -->  
+                                    </div>
+                                                    
+                                </div>
+                                
+                        </div><!-- /.container -->   
+                    </section>
+
+                </section>
+                <br><br>
+            {% endblock %}
+
+            {% block footer %}
+                <!-- Footer -->
+                <div class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <div class="footer-logo">
+                                    <a href="{{path('index_base')}}" rel="home">
+                                        <img style="height:50px;weight:50px" src="{{asset('assets/images/bitimgs/images.jpg')}}" class="img-fluid" alt="Logo">
+                                    </a>
+                                    <div class="im-map">
+                                        <h5 class="title">Over 20 years of experience</h5>
+                                        <p>Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Sed porttitor lectus nibh. Donec rutrum congue leo eget malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
+                                    </div>
+                                </div><!-- footer-logo -->
+                            </div><!-- col-md-4 -->
+
+                        
+                            <div class="col-sm-12 col-md-6 col-lg-3">
+                                <div class="bwt-widget bwt-widget-our-services">
+                                    <div class="title-link box3">
+                                        <h5 class="bwt-widget-title">Menu Principal</h5>
+                                    </div>
+                                    <ul class="our_services">
+                                        <li>
+                                            <a href="{{ path('buy_bitcoins') }}" class="active" title="Acheter des bitcoins"><i class="fa fa-"></i> Acheter des bitcoins</a>
+                                        </li>
+                                  {#   <li><a target="_blank" href="https://digycode.com/">Digycode</a></li> 
+                                        <li><a target="_blank" href="https://zebitex.com/">Trade Cryptos</a>
+                                        </li>     
+                                        <li><a target="_blank" href="https://digywallet.com/">Wallet</a>
+                                        </li>  #} 
+                                    </ul>
+                                </div>
+                            </div><!-- col-md-3 -->
+                            
+                            <div class="col-sm-12 col-md-6 col-lg-2">
+                                <div class="bwt-widget bwt-widget-follow-us">
+                                    <div class="title-link box2">
+                                        <h5 class="bwt-widget-title">Nous Contactez</h5>
+                                    </div>
+                                    <ul class="bwt-follow-us">
+                                        <li class="facebook"><a href="#"> Facebook</a></li>
+                                        <li class="fa fa-envelope"><a href="{{ path('contact') }}"> Envoyer un mail</a></li>
+                                    </ul>
+                                </div>
+                            </div><!-- col-md-2 -->
+
+
+                            <div class="col-sm-12 col-md-6 col-lg-3">
+                                <div class="bwt-widget bwt-widget-subscribe-us">
+                                    <div class="title-link box4">
+                                        <h5 class="bwt-widget-title">Information</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- row -->
+                    </div><!-- container -->
+                </div><!-- footer -->
+
+                <!-- Bottom -->
+                <!----><div class="bwt-footer-copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-6 copyright">
+                                <div class="left-text">Copyright &copy; LifeSoft.ci  {{ "now"|date('Y') }} All Rights Reserved</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Go Top -->
+                <a class="go-top">
+                    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                </a> 
+            {% endblock %}
+
+            {% block javascripts %}
+                <!-- Javascript -->
+                <script type="text/javascript" src="{{ asset('assets/js/jquery.min.js')}}"></script>
+                <script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js')}}"></script>		
+                <script type="text/javascript" src="{{ asset('assets/js/popper.min.js')}}"></script>
+                <script type="text/javascript" src="{{ asset('assets/js/jquery.easing.js')}}"></script>
+                <script type="text/javascript" src="{{ asset('assets/js/main.js')}}"></script>
+            {% endblock %}
+        </div>
+    </body>
+</html>

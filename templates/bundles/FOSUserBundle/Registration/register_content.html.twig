@@ -1,0 +1,190 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<section class="flat-row contact-page bwt-top-20">
+        <div class="container">
+            
+                    <div id="respond" class="comment-respond contact style2 bwt-50">
+                        <div class="title-section style1">
+                            <h3 class="title text-center">Informations personnelles</h3>
+                        </div>
+                        {{ form_start(form, {'method': 'post',"id":"contactform",'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}                      
+                            <div class="row">
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.civilite,{'attr':{'style':'color:black !important;width: 100%;','tabindex':'1', 'name':'civilite', 'id':'civilite'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.telephone,{'attr':{'style':'color:black !important;width: 100%;','tabindex':'1' , 'name':'telephone', 'id':'telephone'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+{##}
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.datenaisssance,{'attr':{'style':'color:black !important;width: 100%;','type':'date','tabindex':'1' , 'name':'datenaisssance', 'id':'datenaisssance'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.nom,{'attr':{'style':'color:black !important;width: 100%;','tabindex':'1' , 'name':'nom', 'id':'nom'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.prenom,{'attr':{'style':'color:black !important;width: 100%;','tabindex':'1' , 'name':'prenom', 'id':'prenom'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.username,{'attr':{'style':'color:black !important;width: 100%;','tabindex':'1'  ,'name':'username' ,'id':'username'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.email,{'attr':{'style':'color:black !important;width: 100%;','tabindex':'1', 'name':'email' ,'id':'email'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                            {{ form_row(form.plainPassword,{'attr':{'value':'','type':'password','style':'color:black !important;width: 100%;','tabindex':'1', 'name':'password' ,'id':'password'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="wrap-type-input alert alert-info">                    
+                                        <div class="input-wrap name">
+                                            <p>Veuiller remplir le formulaire et charger les fichiers démandés pour être vérifié</p>
+                                            <p>Envoyez des documents valides justifiants votre identité: CNI, Permis de Conduire, Passport, un justificatif de residence (facture et certificat de résidence) de moins de 2 mois. Le nom inscrit sur vos pièces doit être conforme aux informations de votre profil.</p>
+                                            {{ form_row(form.imageFile,{'attr':{'style':'color:black !important;width: 100%;','tabindex':'1', 'name':'fichier' ,'id':'fichier'}}) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br/><br/>
+                            <div class="title-section style1">
+                                <h3 class="title text-center">Adresse de facturation</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.nomtierce,{'attr':{'value':'','style':'color:black !important;width: 100%;','tabindex':'1', 'name':'nomtierce', 'id':'nomtierce'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.prenomtierce,{'attr':{'value':'','style':'color:black !important;width: 100%;','tabindex':'1' , 'name':'prenomtierce', 'id':'prenomtierce'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.societetierce,{'attr':{'style':'color:black !important;width: 100%;','tabindex':'1', 'name':'societetierce' ,'id':'societetierce'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.adressetierce,{'attr':{'style':'color:black !important;width: 100%;','tabindex':'1', 'name':'adressetierce' ,'id':'adressetierce'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.codepostaltierce,{'attr':{'style':'color:black !important;width: 100%;','tabindex':'1', 'name':'codepostaltierce' ,'id':'codepostaltierce'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.villetierce,{'attr':{'style':'color:black !important;width: 100%;','tabindex':'1', 'name':'villetierce' ,'id':'villetierce'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.paystierce,{'attr':{'style':'color:black !important;width: 100%;','tabindex':'1', 'name':'paystierce' ,'id':'paystierce'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field clearfix">      
+                                        <div class="wrap-type-input">                    
+                                            <div class="input-wrap name">
+                                                {{ form_row(form.phonetierce,{'attr':{'style':'color:black !important;width: 100%;','tabindex':'1', 'name':'phonetierce' ,'id':'phonetierce'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="input-wrap name">
+                                <p><input type="checkbox" value="" tabindex="2" > j'ai lu les conditions générale de vente et j'y adhère</p>
+                            </div>
+
+                            <div class="submit-wrap">
+                                <button type="submit" value="{{ 'registration.submit'|trans }}" class="bwt-button bg-orange">Je valide et je consulte mon email</button>
+                            </div>
+
+                        {{ form_end(form) }}              
+                    </div><!-- /#respond -->
+
+        </div>
+</section>
+
+    

@@ -1,0 +1,35 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<section class="flat-row contact-page bwt-top-20">
+        <div class="container">
+            
+                <div class="row">
+                    <div class="col-md-4 col-lg-4"></div>
+                    <div class="col-md-5 col-lg-5">
+                            <div >
+                                <h3 class="title">Connexion</h3>
+                            </div>
+                             {% if error %}
+                            <div class="alert alert-danger text-center">
+                                <span style="text-align:center;color:red !important">{{ error.messageKey|trans(error.messageData, 'security') }}</span>
+                             </div>
+                             {% endif %}
+                            <form action="{{ path("fos_user_security_check") }}" method="post" id="contactform" class="comment-form">
+                                <div class="field clearfix">      
+                                    <div class="wrap-type-input">
+                                            <br><br>                    
+                                        <div class="input-wrap name">
+                                            {% if csrf_token %}
+                                                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                                            {% endif %}
+                                            <input type="text" style="color:black !important" value="{{ last_username }}" placeholder="Nom utilisateur" name="_username" class="tb-my-input" required="required" autocomplete="username"  id="author-footer" tabindex="1"  size="32" aria-required="true" /><br/>
+                                            <input type="password" style="color:black !important;width: 100%;" id="password" class="tb-my-input" placeholder="Mot de passe " name="_password" required="required" autocomplete="current-password" tabindex="1" size="32" aria-required="true" /><br/>
+                                            <button type="submit" id="_submit" class="bwt-button bg-orange" name="_submit" value="{{ 'security.login.submit'|trans }}">Connexion</button><br/><br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                    </div>
+        </div>
+</section>
