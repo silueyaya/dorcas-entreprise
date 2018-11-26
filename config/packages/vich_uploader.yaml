@@ -3,5 +3,5 @@ vich_uploader:
 
     mappings:
         piece_image:
-            uri_prefix: /image/upload
-            upload_destination: '%kernel.project_dir%/https://res.cloudinary.com/hfajnfk3v/image/upload'
+            uri_prefix: /images/pieces
+            upload_destination: '%kernel.project_dir%/public/images/pieces'
