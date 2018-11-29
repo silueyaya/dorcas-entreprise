@@ -14,7 +14,7 @@ easy_admin:
         User:
             class: App\Entity\User
             list:
-                fields: ['id', { property: 'username', label: 'Nom Utilisateur' }, 'email',{ property: 'enabled', label: 'Activé' },{ property: 'lastLogin', label: 'Connecté le' },'roles']
+                fields: ['id',{ property: 'imageName', label:'Image pièce',type: 'image', base_path: '/images/pieces/' }, { property: 'username', label: 'Nom Utilisateur' }, 'email',{ property: 'enabled', label: 'Activé' },{ property: 'lastLogin', label: 'Connecté le' },'roles']
             
             show:
                 fields:
@@ -24,16 +24,34 @@ easy_admin:
                     - enabled
                     - lastLogin
                     - roles
-                   # - { property: 'image', type: 'image', base_path: '/uploads/images/pieces/' }  ,'image', type: 'image', base_path: '/uploads/images/pieces'
+                    - { property: 'imageName',label:'Image pièce', type: 'image', base_path: '/images/pieces/' } 
             
             form:
                 fields:
-                    - username
+                    - { type: 'group', css_class: 'col-sm-6', label: 'Informations personnelles',icon: 'id-card-o' }
+                    - civilite
+                    - nom
+                    - prenom
+                    - telephone
+                    - { property: 'username', label:'Nom Utilisateur'}
                     - email
-                    - enabled
-                    #- { property: 'imageFile', type: 'file', base_path: base_path: '/uploads/images/pieces/' }
-                    - { property: 'plainPassword', type: 'text', type_options: { required: false } }
+                    - { property: 'datenaisssance', label:'Date naisssance'}
+                    - { property: 'plainPassword',label:'Mot de passe' ,type: 'text', type_options: { required: false } }
+                    - { property: 'imageFile',label:'Image pièce', type: 'file', base_path: base_path: '/images/pieces/' }
+
+                    - { type: 'group', css_class: 'col-sm-6', label: 'Adresse de facturation' }
+                    - { property: 'nomtierce', label:'Nom'}
+                    - { property: 'prenomtierce', label:'Prénom'}
+                    - { property: 'societetierce', label:'Société'}
+                    - { property: 'adressetierce', label:'Addresse'}
+                    - { property: 'codepostaltierce', label:'Code Postal'}
+                    - { property: 'villetierce', label:'Ville'}
+                    - { property: 'paystierce', label:'Pays'}
+                    - { property: 'phonetierce', label:'Téléphone'}
+
+                    - { type: 'group', css_class: 'col-sm-6', label: 'Role et Activation compte' }
                     - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
+                    - { property: 'enabled', label:'Activer'}
 
     design:
         menu:
