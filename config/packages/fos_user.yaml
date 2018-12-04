@@ -4,20 +4,16 @@ fos_user:
     user_class: App\Entity\User
     from_email:
         address: superhitya2@gmail.com
-        sender_name: silue
+        sender_name: Dorcas-Entreprise
 
 
     registration:
         form:
             type: App\Form\RegistrationType
-    #registration:
-     #   confirmation:
-     #       enabled: true
 
-    registration:
         confirmation:
             from_email: # Use this node only if you don't want the global email address for the confirmation email
                 address: superhitya2@gmail.com
-                sender_name: silue
+                sender_name: Dorcas-Entreprise
             enabled:    true # change to true for required email confirmation
             template:   '@FOSUser/Registration/email.txt.twig'
