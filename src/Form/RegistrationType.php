@@ -23,24 +23,23 @@ class RegistrationType extends AbstractType
         $builder
             ->add('civilite', ChoiceType::class,[
                     'label' => 'Civilité',
-                    //'expanded'=>true,
                     'choices' => [
-                        'M' => true,
-                        'Mme' => false,
+                        'M.' => 'M.',
+                        'Mme' => 'Mme',
                     ],
                 ])
             ->add('nom')
-            ->add('prenom')
-            ->add('telephone')
+            ->add('prenom', TextType::class,['label' => 'Prénoms'])
+            ->add('telephone', TextType::class, ['label' => 'Téléphone'])
             ->add('datenaisssance', DateType::class,['label' => 'Date Naisssance','widget' => 'single_text',])
             ->add('nomtierce', TextType::class,['label' => 'Nom'])
-            ->add('prenomtierce', TextType::class,['label' => 'Prénom'])
+            ->add('prenomtierce', TextType::class,['label' => 'Prénoms'])
             ->add('societetierce', TextType::class,['label' => 'Société'])
             ->add('adressetierce', TextType::class,['label' => 'Adresse'])
             ->add('codepostaltierce', TextType::class,['label' => 'Code Postal'])
             ->add('villetierce', TextType::class,['label' => 'Ville'])
             ->add('paystierce', CountryType::class,['label' => 'Pays'])
-            ->add('phonetierce', TextType::class,['label' => 'Telephone'])
+            ->add('phonetierce', TextType::class,['label' => 'Téléphone'])
             ->add('imageFile', VichFileType::class,['label' => 'Image Pièce'])
         ;
     }
