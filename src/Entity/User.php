@@ -24,7 +24,7 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=15)
+     * @ORM\Column(type="string", length=3)
      */
     private $civilite;
 
