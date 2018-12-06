@@ -71,7 +71,7 @@ class BaseController extends Controller
                 catch(RequestException $e){
 
                     // To catch exactly error 400 use 
-                    if ($e->getResponse()->getStatusCode() == '400') {
+                    if ($e->getResponse()->getStatusCode() == '400' OR $e->getResponse()->getStatusCode() == '404') {
                         return $this->render('default/error_bitcoin.html.twig');
                 }
 
